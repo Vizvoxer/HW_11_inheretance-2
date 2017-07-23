@@ -20,7 +20,7 @@ function SetClock(offset = 0, fullTime = true) {
         };
 
         for (el in timeData) {
-            if (timeData[el].length == 1) {
+            if (timeData[el].length === 1) {
                 timeData[el] = 0 + timeData[el];
             }
         }
@@ -36,7 +36,6 @@ function SetClock(offset = 0, fullTime = true) {
     setInterval(displayTime, 1000);
 }
 
-
 SetClock.prototype.formTimeString = function(h, m, s) {
     if (this.fullTime) {
         this.clockContainer.innerHTML = h + ":" + m + ":" + s;
@@ -48,7 +47,6 @@ SetClock.prototype.formTimeString = function(h, m, s) {
 SetClock.prototype.toggleTimeFormat = function() {
     this.fullTime = !this.fullTime;
 };
-
 
 var ukrainianTime = new SetClock(3);
 
